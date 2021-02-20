@@ -36,6 +36,7 @@ public class RobotTraverse {
             char command = splitInput[i].charAt(0);
             int value = Integer.parseInt(splitInput[i].substring(1));
             System.out.println("command:" + command + " val:" + value);
+            //Calculate mod value for the Turning left and right
             int modValue = value % 4;
             //Print New Position
             //movefront(currentPosition, command, value);
@@ -53,7 +54,6 @@ public class RobotTraverse {
                     moveLeft(currentPosition, modValue);
                     break;
             }
-            System.out.println("New Position X:" + currentPosition.getX() + " Y:" + currentPosition.getY() + " current Direction:"+ currentPosition.getDirection());
             
         }
 
@@ -91,9 +91,63 @@ public class RobotTraverse {
             currentPosition.setX(currentPosition.getX() + value);
         }
     }
-    
+    //CHANGE DIRECTION 90 DEGREE RIGHT IN CLOCK WISE DIRECTION
     public static void moveRight(Node currentPosition, int modValue) {
+        if (currentPosition.getDirection().equals(Constants.NORTH)) {
+            if (modValue == 1) {
+                currentPosition.setDirection(Constants.EAST);
+            }
+            else if (modValue == 2) {
+                currentPosition.setDirection(Constants.SOUTH);
+            }
+            else if (modValue == 3) {
+                currentPosition.setDirection(Constants.WEST);
+            }
+            
+        }
+        
+        else if (currentPosition.getDirection().equals(Constants.SOUTH)) {
+            if (modValue == 1) {
+                currentPosition.setDirection(Constants.WEST);
+            }
+            else if (modValue == 2) {
+                currentPosition.setDirection(Constants.NORTH);
+            }
+            else if (modValue == 3) {
+                currentPosition.setDirection(Constants.EAST);
+            }
+            
+        }
+        
+        else if (currentPosition.getDirection().equals(Constants.EAST)) {
+            if (modValue == 1) {
+                currentPosition.setDirection(Constants.SOUTH);
+            }
+            else if (modValue == 2) {
+                currentPosition.setDirection(Constants.WEST);
+            }
+            else if (modValue == 3) {
+                currentPosition.setDirection(Constants.NORTH);
+            }
+            
+        }
+        
+        else if (currentPosition.getDirection().equals(Constants.WEST)) {
+            if (modValue == 1) {
+                currentPosition.setDirection(Constants.NORTH);
+            }
+            else if (modValue == 2) {
+                currentPosition.setDirection(Constants.EAST);
+            }
+            else if (modValue == 3) {
+                currentPosition.setDirection(Constants.SOUTH);
+            }
+            
+        }
+        
     }
     
-    public static void moveLeft(Node currentPosition, int modValue) {}
+    public static void moveLeft(Node currentPosition, int modValue) {
+        
+    }
 }
