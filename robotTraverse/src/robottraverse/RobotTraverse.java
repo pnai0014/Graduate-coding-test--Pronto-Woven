@@ -30,6 +30,37 @@ public class RobotTraverse {
             m = p.matcher(input);
         } while (!m.matches());
 
-           
+        System.out.println("Start Position X:" + currentPosition.getX() + " Y:" + currentPosition.getY());
+        String splitInput[] = input.split(",");
+        for (int i = 0; i < splitInput.length; i++) {
+            char command = splitInput[i].charAt(0);
+            int value = Integer.parseInt(splitInput[i].substring(1));
+            System.out.println("command:" + command + " val:" + value);
+            //Print New Position
+            //movefront(currentPosition, command, value);
+            switch (command) {
+                case 'F':
+                    moveForward(currentPosition, value);
+                    break;
+                case 'B':
+                    moveBackward(currentPosition, value);
+                    break;
+                case 'R':
+                    moveRight(currentPosition, value);
+                    break;
+                case 'L':
+                    moveLeft(currentPosition, value);
+                    break;
+            }
+            }
+
     }
+
+    public static void moveForward(Node currentPosition, int value) {}
+
+    public static void moveBackward(Node currentPosition, int value) {}
+    
+    public static void moveRight(Node currentPosition, int modValue) {}
+    
+    public static void moveLeft(Node currentPosition, int modValue) {}
 }
