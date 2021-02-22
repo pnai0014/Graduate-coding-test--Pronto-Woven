@@ -28,27 +28,32 @@ public class Node {
         this.y = y;
     }
 
+    //Getter for direction
     public String getDirection() {
         return direction;
     }
 
+    //Getter for X Position
     public int getX() {
         return x;
     }
 
+    //Getter for Y Position
     public int getY() {
         return y;
     }
 
+    //Setter for direction
     public void setDirection(String direction) {
-        System.out.println("in node class: "+direction);
         this.direction = direction;
     }
 
+    //Setter for X Position
     public void setX(int x) {
         this.x = x;
     }
 
+    //Setter for Y Position
     public void setY(int y) {
         this.y = y;
     }
